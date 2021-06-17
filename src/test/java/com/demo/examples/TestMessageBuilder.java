@@ -13,7 +13,19 @@ public class TestMessageBuilder {
         assertEquals("Hello tejas", obj.getMessage("tejas"));
 
     }
+    
+    @Test
 
+    public void testNameEmpty() {
+        MessageBuilder obj = new MessageBuilder();
+        assertEquals("Please provide a name!", obj.getMessage(" "));
+    }
+    
+    @Test
+    public void testNameNull() {
+        MessageBuilder obj = new MessageBuilder();
+        assertEquals("Please provide a name!", obj.getMessage(null));
+    }
    
 
 }
